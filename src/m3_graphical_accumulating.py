@@ -152,7 +152,7 @@ def draw_lines(n, point, window):
 
     for k in range(n):
         point = rg.Point(x, y)
-        line = rg.Line(point, rg.Point(point.x + 100, point.y))
+        line = rg.Line(point, rg.Point(point.x + 100, ran.range))
         line.attach_to(window)
 
         y = y + 30

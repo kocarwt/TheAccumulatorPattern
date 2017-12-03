@@ -166,7 +166,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
 
     rectangle.attach_to(window)
     window.render()
-    
+
     """
     What comes in:  Four arguments:
       -- Positive integers m and n.
