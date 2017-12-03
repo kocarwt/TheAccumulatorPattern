@@ -13,6 +13,7 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 """  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import random
 
 
 
@@ -152,12 +153,11 @@ def draw_lines(n, point, window):
 
     for k in range(n):
         point = rg.Point(x, y)
-        line = rg.Line(point, rg.Point(point.x + 100, ran.range))
+        line = rg.Line(point, rg.Point(point.x + 100, random.randrange(point.y - 100, point.y + 100)))
         line.attach_to(window)
 
-        y = y + 30
     window.render()
-    """
+    """dom
     What comes in: The three arguments are:
       -- A integer n that is at least 2.
       -- An rg.Point.
