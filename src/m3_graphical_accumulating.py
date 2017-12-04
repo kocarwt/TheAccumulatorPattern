@@ -150,10 +150,8 @@ def run_test_draw_lines():
 def draw_lines(n, point, window):
     x = point.x
     y = point.y
-
     for k in range(n):
-        point = rg.Point(x, y)
-        line = rg.Line(point, rg.Point(point.x + 100, random.randrange(point.y - 100, point.y + 100)))
+        line = rg.Line(point, rg.Point(x + 100, y - 100 + (k * (200/(n-1)))))
         line.attach_to(window)
 
     window.render()
