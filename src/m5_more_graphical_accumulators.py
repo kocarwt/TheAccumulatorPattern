@@ -284,8 +284,8 @@ def run_test_draw_lines_from_rectangles():
     title = 'Test 3 of DRAW_LINES_FROM_RECTANGLES:  11 lines!'
     window2 = rg.RoseWindow(700, 700, title)
 
-    rectangle1 = rg.Rectangle(rg.Point(550, 200), rg.Point(650, 100))
-    rectangle2 = rg.Rectangle(rg.Point(600, 50), rg.Point(650, 75))
+    rectangle2 = rg.Rectangle(rg.Point(550, 200), rg.Point(650, 100))
+    rectangle1 = rg.Rectangle(rg.Point(600, 50), rg.Point(650, 75))
     rectangle1.outline_color = 'brown'
     rectangle2.outline_color = 'cyan'
     rectangle2.outline_thickness = 10
@@ -305,12 +305,13 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     height = y - rectangle1.corner_2.y
     width2 = x2 - rectangle2.corner_2.x
     height2 = y2 - rectangle2.corner_2.y
+    start = rg.Point(x - (width / 2), y - (height / 2))
+    end = rg.Point(x2 - (width2 / 2), y2 - (height2 / 2))
     for k in range(n):
-        line = rg.Line(rg.Point(x - (width/2), y - (height/2)), rg.Point(x2 - (width2/2), y2 - (height2/2)))
+        line = rg.Line(start, end)
         line.attach_to(window)
-        x = x + width/2
-        y = y - height/2
-
+        start = rg.Point(start.x - (abs(width))/2, start.y + (abs(height))/2)
+        end = rg.Point(end.x - (abs(width))/2, end.y + (abs(height))/2)
 
     window.render()
 
